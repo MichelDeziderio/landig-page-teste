@@ -1,0 +1,357 @@
+// sass --watch app.scss:../css/app.css --style compressed
+
+
+$color-primary: #3498db;
+$color-dark-primary: #012970;
+$color-light-primary: #e1f0fa;
+$color-with-primary: #ffffff;
+$text-primary: #444444;
+$box-shadow-blue: 0px 5px 30px rgba(65, 84, 241, 0.4);
+
+body {
+  background-color: $color-with-primary;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+
+  a {
+    margin: 5px;
+    font-size: 30px;
+    color: $color-primary;
+    text-decoration: none;
+    transition: all 1s;
+
+    &:hover {
+      color: $text-primary;
+    }
+  }
+}
+
+// init
+
+.init {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    color: $color-dark-primary;
+  }
+
+  h2 {
+    color: $text-primary;
+    margin: 15px 0 0 0;
+    font-size: 26px;
+  }
+
+  .btn-get-started {
+    margin-top: 30px;
+    line-height: 0;
+    padding: 18px 40px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: $color-with-primary;
+    background-color: $color-primary;
+    box-shadow: $box-shadow-blue;
+    text-decoration: none;
+    transition: all 1s;
+
+    &:hover {
+      opacity: .8;
+      background-color: $color-dark-primary;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    i {
+      margin-left: 5px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    &:hover i {
+      transform: translateX(5px);
+    }
+  }
+
+  .init-img {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1024px) {
+  .init {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 991px) {
+  .init {
+    height: auto;
+    padding: 120px 0 60px 0;
+
+    .init-img {
+      text-align: center;
+      margin-top: 80px;
+
+      img {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .init {
+    text-align: center;
+
+    h1 {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    .init-img img {
+      width: 100%;
+    }
+  }
+}
+
+// init
+
+// about
+
+.about {
+  padding: 50px 0px;
+
+  .content {
+    background-color: $color-primary;
+    margin-top: 20px;
+    padding: 30px;
+    height: 300px;
+    display: grid;
+    align-content: center;
+    color: $color-with-primary;
+    border-radius: 0px 50px 0px 50px;
+
+    .title {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .description {
+      width: 100%;
+    }
+  }
+}
+
+// about
+
+// services
+
+.services {
+  .icon-box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    background: $color-with-primary;
+    box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.09);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    z-index: 1;
+    color: $text-primary;
+    text-decoration: none;
+
+    .icon {
+      margin: 0 auto 20px auto;
+      padding-top: 10px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      background-color: $color-primary;
+      transition: all 0.3s ease-in-out;
+
+      i {
+        background-color: transparent;
+        color: $color-with-primary;
+        font-size: 38px;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: $color-light-primary;
+      right: -60px;
+      top: -40px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      transition: all 0.3s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $color-with-primary;
+
+      &::before {
+        background-color: $color-primary;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+      }
+
+      .icon {
+        background-color: $color-with-primary;
+
+        i {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+// services
+
+// soluctions
+
+.graphics {
+  padding: 50px 0;
+
+  .title {
+    color: $color-primary;
+    font-size: 48px;
+
+    @media(max-width:768px) {
+      font-size: 32px;
+    }
+  }
+
+  .content {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 30px;
+    display: flex;
+    min-height: 300px;
+    justify-content: space-around;
+    align-items: center;
+
+    @media(max-width:990px){
+      display: block;
+    }
+
+    .card-graphic {
+      position: relative;
+      margin: 10px;
+      padding: 20px;
+      height: 180px;
+      background-color: transparent;
+      text-align: center;
+      transition: ease-in-out 300ms;
+      overflow: hidden;
+      cursor: pointer;
+
+      .card-title {
+        z-index: 100000;
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        left: 0px;
+        font-size: 12px;
+        color: $text-primary;
+        transition: ease-in-out 300ms;
+      }
+
+      &:hover .card-title {
+        font-size: 14px;
+        font-weight: 500;
+        color: $text-primary;
+      }
+
+      .porcent {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto;
+        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+        margin-top: -150px;
+        z-index: 1;
+
+        .value-graphic {
+          color: $text-primary;
+          font-weight: 500;
+          font-size: 22px;
+          position: absolute;
+          top: 50%;
+          margin-top: -12px;
+          width: 100%;
+          left: 0px;
+          line-height: 1;
+          transition: ease-in-out 300ms;
+        }
+      }
+
+      &:hover {
+
+        .value-graphic {
+          color: $text-primary;
+          font-size: 28px;
+          margin-top: -16px;
+          font-weight: 600;
+        }
+      }
+
+      svg {
+        position: relative;
+        width: 150px;
+        height: 147px;
+        z-index: 1000;
+        overflow: hidden;
+        border-radius: 100px;
+
+        circle {
+          background-color: transparent;
+          width: 80%;
+          height: 80%;
+          fill: none;
+          stroke: $color-with-primary;
+          stroke-width: 8;
+          stroke-linecap: round;
+          transform: translate(5px, 5px);
+
+          &:nth-child(2) {
+            stroke-dasharray: 440;
+            stroke-dashoffset: 440;
+            transition: ease-in-out 1s;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
+
+// soluctions
